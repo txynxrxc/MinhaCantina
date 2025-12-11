@@ -12,6 +12,7 @@ namespace MinhaCantina.Servidor.Controllers;
 public class ProdutoController(MinhaCantinaContexto cantinaContexto) : ControllerBase
 {
 	private MinhaCantinaContexto _contexto = cantinaContexto;
+
 	[HttpPost("criar")]
 	public IActionResult CriarProduto([FromBody] ProdutoRegistroDto requisicao)
 	{
@@ -63,6 +64,45 @@ public class ProdutoController(MinhaCantinaContexto cantinaContexto) : Controlle
 		}).ToList();
 
 		return StatusCode(200, produtos);
+	}
+
+	// Rota: site.com/Produto/alterar_nome/{}
+	[HttpPatch("alterar_nome")]
+	public IActionResult AlterarNomeProduto(int produtoId, string novoNome)
+	{
+		Produto? produto = _contexto.Produtos.Find(produtoId);
+
+		if (produto is null)
+		{
+			return StatusCode(400, "Este produto não existe");
+		}
+
+		try
+		{
+			produto.MudarNome(novoNome);
+			_contexto.Produtos.Update(produto);
+			_contexto.SaveChanges();
+		}
+		catch(DbUpdateException excecao)
+		{
+			var excecaoInterna = excecao.InnerException;
+
+			if (excecaoInterna is MySqlException excecaoSql)
+			{
+				if (excecaoSql.Number == 1062)
+				{
+					return StatusCode(400, "O nome deste produto já existe. Tente com um novo nome");
+				}
+			}
+
+			throw excecao;
+		}
+		catch (Exception excecao)
+		{
+			return StatusCode(500, $"Ocorreu um erro inesperado: {excecao.Message}");
+		}
+
+		return StatusCode(204);
 	}
 }
 
