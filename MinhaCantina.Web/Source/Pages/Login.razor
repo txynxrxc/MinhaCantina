@@ -7,6 +7,33 @@
 
 <h3>Login</h3>
 
-@code {
+@* 1 tag form > 1 campo pasa username, 1 campo para senha, 1 botão*@
 
-}
+<form class="p-3 border-5 rounded">
+	<div class="input-group mb-3">
+		<label for="Username">
+			Username*
+			<div>
+				<input type="text" class="form-control" id="username" placeholder="Username" required autofocus />
+			</div>
+
+		</label>
+	</div>
+
+
+
+	<div class="input-group mb-3">
+		<label for="senha">
+			Senha*
+
+			<div>
+				<input type="password" class="form-control" id="senha" minlength="8" placeholder="Senha" />
+			</div>
+		</label>
+	</div>
+
+	<div>
+		<button class="btn btn-primary btn-block mb-4"> Entrar
+			</button>
+	</div>
+</form>
