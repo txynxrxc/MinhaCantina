@@ -23,7 +23,7 @@ public class MinhaCantinaContexto(DbContextOptions contextoOpcoes) : DbContext(c
 		// Modifica a propriedade Nome
 		modelBuilder.Entity<Usuario>().Property(usuario => usuario.Nome).HasColumnType("varchar").HasMaxLength(100).IsRequired();
 		// Modifica a propriedade Senha
-		modelBuilder.Entity<Usuario>().Property(usuario => usuario.Senha).HasColumnType("varchar").IsRequired();
+		modelBuilder.Entity<Usuario>().Property(usuario => usuario.Senha).HasColumnType("text").IsRequired();
 		// Modifica a propriedade Username
 		modelBuilder.Entity<Usuario>().Property(usuario => usuario.Username).HasColumnType("varchar").HasMaxLength(16).IsRequired();
 		modelBuilder.Entity<Usuario>().HasIndex(usuario => usuario.Username).IsUnique();
