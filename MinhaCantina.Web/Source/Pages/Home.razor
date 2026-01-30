@@ -1,20 +1,36 @@
 ﻿@page "/"
+@using MinhaCantina.Biblioteca.DTOs
 
 <PageTitle>Home</PageTitle>
 
 <h1>Produtos</h1>
 
 
+wsss
+<section class="d-flex gap-3" >
 
-    <section class="d-flex gap-3"
+	<Card Titulo="Coxinha" Descricao="Coxinha dourada e crocante por fora, com recheio cremoso de frango bem temperado." ValorReal="10M" ValorDesconto="7m"
+		  CaminhoImagem="/Images/COXINHA.jpg" />
 
-    <Card Titulo="Coxinha" Descricao="Coxinha dourada e crocante por fora, com recheio cremoso de frango bem temperado." ValorReal="10M" ValorDesconto="7m" 
-    CaminhoImagem="/Images/COXINHA.jpg" />
+	<Card Titulo="Coca-cola" Descricao="lata 350ml bem gelada, perfeita para acompanhar qualquer lanche." ValorReal="5M" ValorDesconto="4.75M"
+		  CaminhoImagem="/Images/cocacola1.jpg" />
 
-    <Card Titulo="Coca-cola" Descricao="lata 350ml bem gelada, perfeita para acompanhar qualquer lanche." ValorReal="5M" ValorDesconto="4.75M"
-    CaminhoImagem="/Images/cocacola1.jpg" />
+	<Card Titulo="Brownie" Descricao="Brownie artesanal de chocolate,com textura úmida e casquinha levemente crocante.." ValorReal="15M" ValorDesconto="10M" CaminhoImagem="/Images/brownie.webp" />
 
-    <Card Titulo="Brownie" Descricao="Brownie artesanal de chocolate,com textura úmida e casquinha levemente crocante.." ValorReal="15M" ValorDesconto="10M"
-    CaminhoImagem="/Images/brownie.webp" />
+	@foreach(var produto in listaProdutos)
+	{
+		<Card Titulo="@produto.Nome" ValorReal="@produto.Preco" />
+	}
 
 </section>
+
+@code {
+
+	private List<ProdutoRespostaDto> listaProdutos = new()
+	{
+		new ProdutoRespostaDto{ Id=1, Nome = "Coxinha", Preco = 10M },
+		new ProdutoRespostaDto{ Id=2, Nome = "Coca Cola", Preco = 5M },
+		new ProdutoRespostaDto{ Id=1, Nome = "Brownie", Preco = 15M },
+	};
+
+}
