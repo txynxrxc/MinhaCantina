@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using MinhaCantina.Biblioteca.DTOs;
 using MinhaCantina.Biblioteca.Modelos;
 using MinhaCantina.Servidor.Dados;
 
@@ -10,7 +10,7 @@ namespace MinhaCantina.Servidor.Controllers;
 public class AutenticacaoController(MinhaCantinaContexto contextoCantina) : ControllerBase
 {
 	// modificadorAcesso tipoCampo NomeCampo = Valor;
-	private MinhaCantinaContexto _contexto = contextoCantina;
+	private readonly MinhaCantinaContexto _contexto = contextoCantina;
 
 	// GET, POST, PATCH/PUT, DELETE
 	// Pegar, Criar, Alterar, Excluir
@@ -77,22 +77,6 @@ public class AutenticacaoController(MinhaCantinaContexto contextoCantina) : Cont
 	}
 }
 
-public class UsuarioRegistroDto
-{
-	public string Nome { get; set; } = string.Empty;
-	public string Senha { get; set; } = string.Empty;
-	public string Username { get; set; } = string.Empty;
-}
 
-public class UsuarioRespostaDto
-{
-	public int Id { get; set; }
-	public string Nome { get; set; } = string.Empty;
-	public string Username { get; set; } = string.Empty;
-}
 
-public class UsuarioLoginDto
-{
-	public string Username { get; set; } = string.Empty;
-	public string Senha { get; set; } = string.Empty;
-}
+

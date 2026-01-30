@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MinhaCantina.Biblioteca.DTOs;
 using MinhaCantina.Biblioteca.Modelos;
 using MinhaCantina.Servidor.Dados;
 using MySqlConnector;
@@ -68,15 +68,4 @@ public class CategoriaController(MinhaCantinaContexto contextoCantina) : Control
 		var categorias = _contexto.Categorias.ToList();
 		return StatusCode(200, categorias);
 	}
-}
-
-public class CategoriaRegistroDto
-{
-	public string Nome { get; set; } // Propriedade
-}
-
-public class CategoriaRespostaDto
-{
-	public int Id { get; set; }
-	public string Nome { get; set; }
 }

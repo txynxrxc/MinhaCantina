@@ -3,10 +3,10 @@
 public class Produto
 {
 	public int Id { get; private set; }
-	public string Nome { get; private set; }
+	public string Nome { get; private set; } = string.Empty;
 	public decimal Preco { get; private set; }
 	public string? Descricao { get; private set; }
-	public Categoria Categoria { get; private set; }
+	public Categoria Categoria { get; private set; } = null!;
 
 	// Construtor
 	private Produto() { }
