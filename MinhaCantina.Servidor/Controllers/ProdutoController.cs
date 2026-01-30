@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using MinhaCantina.Biblioteca.Modelos;
+﻿using Microsoft.EntityFrameworkCore;
 using MinhaCantina.Servidor.Dados;
+using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
+using MinhaCantina.Biblioteca.Modelos;
+using MinhaCantina.Biblioteca.DTOs;
 
 namespace MinhaCantina.Servidor.Controllers;
 
@@ -165,19 +165,4 @@ public class ProdutoController(MinhaCantinaContexto cantinaContexto) : Controlle
 
 		return StatusCode(204);
 	}
-}
-
-public class ProdutoRegistroDto
-{
-	public string Nome { get; set; }
-	public decimal Preco { get; set; }
-	public string? Descricao { get; set; }
-	public int CategoriaId { get; set; }
-}
-public class ProdutoRespostaDto
-{
-	public int Id { get; set; }
-	public string Nome { get; set; }
-	public decimal Preco { get; set; }
-	public string CategoriaNome { get; set; }
 }

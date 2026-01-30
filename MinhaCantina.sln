@@ -14,7 +14,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinhaCantina.Testes", "Minh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinhaCantina.Servidor", "MinhaCantina.Servidor\MinhaCantina.Servidor.csproj", "{47014AA4-5925-4EEA-B3C2-F64249E23791}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinhaCantina.Web", "MinhaCantina.Web\MinhaCantina.Web.csproj", "{87AB2806-65E0-4C55-9731-B52E3DE340C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinhaCantina.Web", "MinhaCantina.Web\MinhaCantina.Web.csproj", "{49B46207-E2CD-45B4-A941-3B463D39D948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +34,10 @@ Global
 		{47014AA4-5925-4EEA-B3C2-F64249E23791}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47014AA4-5925-4EEA-B3C2-F64249E23791}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47014AA4-5925-4EEA-B3C2-F64249E23791}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87AB2806-65E0-4C55-9731-B52E3DE340C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87AB2806-65E0-4C55-9731-B52E3DE340C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87AB2806-65E0-4C55-9731-B52E3DE340C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87AB2806-65E0-4C55-9731-B52E3DE340C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49B46207-E2CD-45B4-A941-3B463D39D948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49B46207-E2CD-45B4-A941-3B463D39D948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49B46207-E2CD-45B4-A941-3B463D39D948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49B46207-E2CD-45B4-A941-3B463D39D948}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

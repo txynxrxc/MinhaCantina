@@ -7,11 +7,11 @@ public class Categoria
 	// Modificadores de acesso: public, internal e private
 	// Tipos de dados: string, int, float/decimal/ bool
 	public int Id { get; private set; }
-	public string Nome { get; private set; }
+	public string Nome { get; private set; } = string.Empty;
 
 	// Sintaxe de Construtor:
 	// <modificador_acesso> <NomeClasse>
-	
+
 	// Serve para o ORM
 	private Categoria() { }
 

@@ -1,39 +1,26 @@
 ﻿@page "/login"
 
-<PageTitle> Entrar com sua conta</PageTitle>
+<PageTitle>Entrar com a sua conta</PageTitle>
 
 
 
 
 <h3>Login</h3>
 
-@* 1 tag form > 1 campo pasa username, 1 campo para senha, 1 botão*@
+<form class="mt-5" style="max-width: 250px;">
+    <div class="form-outline mb-4">
+        <label class="form-label" for="usuario">Username</label>
+        <input type="text" id="usuario" class="form-control" />
+    </div>
 
-<form class="p-3 border-5 rounded">
-	<div class="input-group mb-3">
-		<label for="Username">
-			Username*
-			<div>
-				<input type="text" class="form-control" id="username" placeholder="Username" required autofocus />
-			</div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="senha">Senha</label>
+        <input type="password" id="senha" class="form-control" />
+    </div>
 
-		</label>
-	</div>
-
-
-
-	<div class="input-group mb-3">
-		<label for="senha">
-			Senha*
-
-			<div>
-				<input type="password" class="form-control" id="senha" minlength="8" placeholder="Senha" />
-			</div>
-		</label>
-	</div>
-
-	<div>
-		<button class="btn btn-primary btn-block mb-4"> Entrar
-			</button>
-	</div>
+    <input type="button" class="btn btn-primary btn-block mb-4" value="Entrar">
 </form>
+
+@code {
+
+}
